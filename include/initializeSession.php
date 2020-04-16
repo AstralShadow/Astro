@@ -6,4 +6,4 @@
  * and open the template in the editor.
  */
 
-session_name("");
+session_name("Astro_v0_1");
