@@ -14,10 +14,14 @@ include "include/initializeSession.php";
         <title> Astro </title>
         <meta charset="UTF-8">
         <link href="stylesheets/main.css" rel="stylesheet" type="text/css">
+        <link href="stylesheets/homePage.css" rel="stylesheet" type="text/css">
+        <script src="javascript/compactMode.js"></script>
     </head>
     <body>
         <div id="mainContainer">
-            
+            <div id="centerBlock" class="Block">
+                asd
+            </div>
         </div>
         <div id="gameContainer">
             

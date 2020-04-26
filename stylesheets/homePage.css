@@ -1,0 +1,29 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Apr 26, 2020, 11:52:13 PM
+    Author     : AzCraft
+*/
+
+#centerBlock:not(.Compact){
+    position:absolute;
+    width: 350px;
+    height: 550px;
+    top: 50%;
+    left: 50%;
+    margin-top: -275px;
+    margin-left: -175px;
+}
+
+#centerBlock.Compact{
+    position:absolute;
+    width: 300px;
+    height: 400px;
+    top: 50%;
+    left: 50%;
+    margin-top: -200px;
+    margin-left: -150px;
+}
