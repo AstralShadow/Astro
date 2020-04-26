@@ -7,15 +7,20 @@
 
 include "include/initializeSession.php";
 ?>
+
 <!DOCTYPE HTML>
 <html>
     <head>
+        <title> Astro </title>
         <meta charset="UTF-8">
-        <title>
-            Astro
-        </title>
+        <link href="stylesheets/main.css" rel="stylesheet" type="text/css">
     </head>
     <body>
-        <div>asd</div>
+        <div id="mainContainer">
+            
+        </div>
+        <div id="gameContainer">
+            
+        </div>
     </body>
 </html>
