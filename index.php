@@ -16,6 +16,6 @@ include "include/initializeSession.php";
         </title>
     </head>
     <body>
-        <div>
+        <div>asd</div>
     </body>
 </html>
