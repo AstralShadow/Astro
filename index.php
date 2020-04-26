@@ -20,7 +20,7 @@ include "include/initializeSession.php";
     <body>
         <div id="mainContainer">
             <div id="centerBlock" class="Block">
-                asd
+                Placeholder
             </div>
         </div>
         <div id="gameContainer">
