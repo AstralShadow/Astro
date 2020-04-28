@@ -16,6 +16,7 @@ include "include/initializeSession.php";
         <link href="stylesheets/main.css" rel="stylesheet" type="text/css">
         <link href="stylesheets/homePage.css" rel="stylesheet" type="text/css">
         <script src="javascript/compactMode.js"></script>
+        <script src="javascript/backgroundAnimation.js"></script>
     </head>
     <body>
         <div id="mainContainer">
