@@ -9,19 +9,12 @@ function isScreenOverflown(){
     return html.scrollHeight > html.clientHeight
            || html.scrollWidth > html.clientWidth;
 }
+
 function activateCompactMode(){
-    var blocks = document.getElementsByClassName("Block")
-    Object.keys(blocks).forEach(function(key){
-        var block = blocks[key];
-        block.classList.add("Compact");
-    })
+    document.body.classList.add("Compact");
 }
 function deactivateCompactMode(){
-    var blocks = document.getElementsByClassName("Block")
-    Object.keys(blocks).forEach(function(key){
-        var block = blocks[key];
-        block.classList.remove("Compact");
-    })
+    document.body.classList.remove("Compact");
 }
 
 window.addEventListener("resize", function(){
@@ -33,5 +26,7 @@ window.addEventListener("resize", function(){
 window.addEventListener("load", function(){
     if(isScreenOverflown()){
         activateCompactMode()
+    }else{
+        deactivateCompactMode();
     }
 })

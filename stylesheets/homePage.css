@@ -7,23 +7,20 @@ and open the template in the editor.
     Created on : Apr 26, 2020, 11:52:13 PM
     Author     : AzCraft
 */
-
-#centerBlock:not(.Compact){
+#centerBlock{
     position:absolute;
+    top: 50%;
+    left: 50%
+}
+body:not(.Compact) #centerBlock{
     width: 350px;
     height: 550px;
-    top: 50%;
-    left: 50%;
     margin-top: -275px;
     margin-left: -175px;
 }
-
-#centerBlock.Compact{
-    position:absolute;
+body.Compact #centerBlock{
     width: 300px;
     height: 400px;
-    top: 50%;
-    left: 50%;
     margin-top: -200px;
     margin-left: -150px;
 }

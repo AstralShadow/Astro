@@ -15,26 +15,20 @@ body{
     height: 100%;
 }
 
-/*
- * class .Block will recive .Compact if the page overflows the screen
- */
-.Block:not(.Compact){
+.Block{
     background: rgba(0, 0, 0, 0.9);
     border: 2px solid white;
     border-radius: 15px;
     color: white;
     font-family: Tahoma;
-    font-size: 14pt;
     display:inline-block;
+    
 }
-.Block.Compact{
-    background: rgba(0, 0, 0, 0.9);
-    border: 2px solid white;
-    border-radius: 15px;
-    color: white;
-    font-family: Tahoma;
+body:not(.Compact) .Block{
+    font-size: 14pt;
+}
+body.Compact .Block{
     font-size: 12pt;
-    display:inline-block;
 }
 
 #mainContainer{
