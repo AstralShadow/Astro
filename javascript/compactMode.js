@@ -5,28 +5,28 @@
  */
 
 function isScreenOverflown(){
-    var html = document.body.parentElement;
+    var html = document.body.parentElement
     return html.scrollHeight > html.clientHeight
-           || html.scrollWidth > html.clientWidth;
+           || html.scrollWidth > html.clientWidth
 }
 
 function activateCompactMode(){
-    document.body.classList.add("Compact");
+    document.body.classList.add("Compact")
 }
 function deactivateCompactMode(){
-    document.body.classList.remove("Compact");
+    document.body.classList.remove("Compact")
 }
 
 window.addEventListener("resize", function(){
-    deactivateCompactMode();
+    deactivateCompactMode()
     if(isScreenOverflown()){
-        activateCompactMode();
+        activateCompactMode()
     }
 })
 window.addEventListener("load", function(){
     if(isScreenOverflown()){
         activateCompactMode()
     }else{
-        deactivateCompactMode();
+        deactivateCompactMode()
     }
 })

@@ -8,19 +8,28 @@ and open the template in the editor.
     Author     : AzCraft
 */
 #centerBlock{
-    position:absolute;
+    position: absolute;
     top: 50%;
     left: 50%
 }
-body:not(.Compact) #centerBlock{
-    width: 350px;
-    height: 550px;
-    margin-top: -275px;
-    margin-left: -175px;
-}
-body.Compact #centerBlock{
-    width: 300px;
-    height: 400px;
-    margin-top: -200px;
-    margin-left: -150px;
+    body:not(.Compact) #centerBlock{
+        width: 350px;
+        height: 550px;
+        margin-top: -275px;
+        margin-left: -175px;
+    }
+    body.Compact #centerBlock{
+        width: 300px;
+        height: 400px;
+        margin-top: -200px;
+        margin-left: -150px;
+    }
+
+#playButton{
+    text-align: center;
+    margin: 5%;
+    padding: 20px;
+    font: 24pt Times New Roman;
+    border: 2px solid white;
+    cursor: pointer;
 }
