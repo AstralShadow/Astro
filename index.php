@@ -40,6 +40,10 @@ include "include/initializeSession.php";
                 document.getElementById("gameContainer").style.display = "block"
                 Game.start()
             }
+			<?php
+				if(isset($_GET["start"]))
+					echo "startGame()";
+			?>
         </script>
     </body>
 </html>

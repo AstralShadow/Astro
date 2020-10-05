@@ -6,65 +6,86 @@
 
 /**
  * The core class of the game in the browser.
- * @param container
+ * @constructor
  */
-class AstroGame{
-    _container
-    _canvas
-    _gl
-    _playing
-    _paused
-    _speed
-    
-    constructor({container}){
-        this._container = container
-        this._canvas = document.createElement("canvas")
-        this._gl = this.canvas.getContext("experimental-webgl")
-        this._playing = false
-        this._paused = false
-        this._speed = 1
-        
-        this.fitCanvasToContainer();
-        while(container.firstChild){
-            container.removeChild(container.firstChild)
-        }
-        container.append(this._canvas)
-    }
-    
-    start = () => {
-        if(!this._playing){
-            if(window.requestAnimationFrame !== undefined){
-                window.requestAnimationFrame(this.loop)
-            }else{
-                this._intervalId = setInterval(this.loop, 15)
-            }
-        }
-        this._playing = true
-        this._paused = false
-    }
-    pause = () => {
-        this._paused = true
-    }
-    stop = () => {
-        this._playing = false
-        if(window.requestAnimationFrame === undefined)
-            clearInterval(this._intervalId);
-    }
+function AstroGame(settings){
+    "use strict"
+    var container = settings.container
+    this.container = container
+    this.canvas = document.createElement("canvas")
+    this.ctx = this.canvas.getContext("2d")
 
-    loop = () => {
-        if(this._playing && window.requestAnimationFrame !== undefined){
-            window.requestAnimationFrame(this.loop)
-        }
-        
-        finCanvasToContainer();
-        
+    this.fitCanvasToContainer();
+    while(container.firstChild){
+        container.removeChild(container.firstChild)
     }
-    finCanvasToContainer = () => {
-        if(this._canvas.width !== this._container.clientWidth
-           || this._canvas.height !== this._container.clientHeight
-        ){
-            this._canvas.width = this._container.clientWidth
-            this._canvas.height = this._container.clientHeight
+    container.appendChild(this.canvas)
+}
+
+AstroGame.prototype.container = undefined
+AstroGame.prototype.canvas = undefined
+AstroGame.prototype.ctx = undefined
+AstroGame.prototype.playing = false
+AstroGame.prototype.paused = false
+AstroGame.prototype.speed = 1
+
+AstroGame.prototype.start = function(){
+    "use strict"
+    var self = this
+    
+    if(!this.playing){
+        if(window.requestAnimationFrame !== undefined){
+            window.requestAnimationFrame(function(){
+                self.loop()
+            })
+        }else{
+            this._intervalId = setInterval(function(){
+                self.loop()
+            }, 15)
         }
+    }
+    this.playing = true
+    this.paused = false
+}
+
+AstroGame.prototype.play = function(){
+    "use strict"
+    "use strict"
+    return this.start()
+}
+
+AstroGame.prototype.pause = function(){
+    "use strict"
+    "use strict"
+    this.paused = true
+}
+
+AstroGame.prototype.stop = function(){
+    "use strict"
+    this.playing = false
+    if(window.requestAnimationFrame === undefined)
+        clearInterval(this._intervalId);
+}
+
+AstroGame.prototype.loop = function(){
+    "use strict"
+    var self = this
+    if(this.playing && window.requestAnimationFrame !== undefined){
+        window.requestAnimationFrame(function(){
+            self.loop()
+        })
+    }
+    this.fitCanvasToContainer();
+    
+    
+}
+
+AstroGame.prototype.fitCanvasToContainer = function(){
+    "use strict"
+    if(this.canvas.width !== this.container.innerWidth
+       || this.canvas.height !== this.container.innerHeight
+    ){
+        this.canvas.width = this.container.innerWidth
+        this.canvas.height = this.container.innerWidth
     }
 }
