@@ -14,14 +14,18 @@ function AstroGame(settings){
     this.container = container
     this.canvas = document.createElement("canvas")
     this.ctx = this.canvas.getContext("2d")
-
-    this.fitCanvasToContainer();
-    while(container.firstChild){
+    
+    while(container.firstChild)
         container.removeChild(container.firstChild)
-    }
     container.appendChild(this.canvas)
+    this.fitCanvasToContainer();
+    
+    this.engine = new AstroEngine()
+    this.graphics = new AstroGraphics(this.ctx)
 }
 
+AstroGame.prototype.engine = undefined
+AstroGame.prototype.graphics = undefined
 AstroGame.prototype.container = undefined
 AstroGame.prototype.canvas = undefined
 AstroGame.prototype.ctx = undefined
@@ -77,6 +81,12 @@ AstroGame.prototype.loop = function(){
     }
     this.fitCanvasToContainer();
     
+    this.engine.loop()
+    this.graphics.clear()
+    this.graphics.drawScene(this.engine.getScene())
+    this.graphics.drawObjects(this.engine.getObjects())
+    this.graphics.drawPlayers(this.engine.getPlayers())
+    this.graphics.drawParticles(this.engine.getPaticles())
     
 }
 
