@@ -18,8 +18,8 @@ include "include/initializeSession.php";
         <script src="javascript/compactMode.js"></script>
         <script src="javascript/backgroundAnimation.js"></script>
         <script src="javascript/game/AstroGame.js"></script>
-        <script src="javascript/game/AstroEngine.js"></script>
-        <script src="javascript/game/AstroGraphics.js"></script>
+        <script src="javascript/game/Engine.js"></script>
+        <script src="javascript/game/Graphics.js"></script>
     </head>
     <body>
         <div id="mainContainer">
