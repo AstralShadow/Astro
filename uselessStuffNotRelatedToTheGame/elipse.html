@@ -1,0 +1,52 @@
+<style>
+ body, canvas{
+    background: black;
+ }
+</style>
+<canvas width="800" height="600" id="image" style="position:absolute; top:50%;left:50%;transform:translate(-50%, -50%);"></canvas>
+<script>
+var rateX = 0.75
+var rateY = 0.75
+var sensitivity = 0.1
+var ctx = document.getElementById("image").getContext("2d")
+var size = 300;
+ctx.translate(400, 300);
+var i = 0;
+var rot = 0
+ctx.lineWidth = 3;
+function draw(){
+i++;
+    window.requestAnimationFrame(draw)
+    if(i % 2 != 0) return;
+    ctx.fillStyle = "rgba(0, 0, 0, 0.4)";
+    ctx.fillRect(-800, -600, 1600, 1200)
+    ctx.save()
+    ctx.beginPath()
+    ctx.rotate(rot)
+    ctx.moveTo(size * rateX, 0)
+    for(var a = 0; a < 2 * Math.PI; a += sensitivity)
+        ctx.lineTo(Math.cos(a) * size * rateX, Math.sin(a) * size * rateY)
+    
+    ctx.lineTo(size * rateX, 0)
+    ctx.strokeStyle = "rgb(" + c() + ", " + c() + ", " + c() + ")";
+    ctx.stroke();
+    ctx.restore()
+    rateX += 0.075 * (Math.random() - 0.5)
+    rateY += 0.075 * (Math.random() - 0.5)
+    sensitivity = (2 * Math.PI) / (20 + 20 * Math.random())
+    rot += sensitivity * Math.random() * 2
+    rateX = Math.min(1, rateX)
+    rateY = Math.min(1, rateY)
+    rot = rot % (2 * Math.PI)
+    ctx.fillStyle = "#fff";
+    ctx.clearRect(0, 300 - 20, 400, 20);
+    ctx.font = "18px Tahoma"
+    ctx.fillText("rX:" + Math.round(rateX * 1000) + " rY:" + Math.round(rateY * 1000) + " s:" + Math.round(sensitivity * 1000) + " r:" + Math.round(rot * 1000), 0, 300)
+}
+function c(){
+    return Math.floor(256 * Math.random())
+}
+    window.requestAnimationFrame(draw)
+
+
+</script>
