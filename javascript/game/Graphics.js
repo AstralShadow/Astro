@@ -22,6 +22,21 @@ AstroGraphics.prototype.clear = function(){
 }
 
 AstroGraphics.prototype.drawSprite = function(object){
+    
+}
+
+AstroGraphics.prototype.drawScene = function(object){
 
 }
 
+AstroGraphics.prototype.drawObjects = function(object){
+
+}
+
+AstroGraphics.prototype.drawPlayers = function(object){
+
+}
+
+AstroGraphics.prototype.drawParticles = function(object){
+
+}

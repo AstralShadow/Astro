@@ -15,3 +15,19 @@ function AstroEngine(){
 AstroEngine.prototype.loop = function(){
     "use strict"
 }
+
+AstroEngine.prototype.getScene = function(){
+    "use strict"
+}
+
+AstroEngine.prototype.getObjects = function(){
+    "use strict"
+}
+
+AstroEngine.prototype.getPlayers = function(){
+    "use strict"
+}
+
+AstroEngine.prototype.getParticles = function(){
+    "use strict"
+}
